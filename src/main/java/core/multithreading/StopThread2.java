@@ -11,7 +11,6 @@ public class StopThread2 {
                 int i = 0;
                 while (!stopRequested) {
                     i++;
-                    System.out.println(i);
                 }
                 System.out.println("Zakończono drugi wątek");
             }
@@ -19,7 +18,7 @@ public class StopThread2 {
 
         System.out.println("Uruchomiono główny wątek");
         t.start();
-        Thread.sleep(500);
+        Thread.sleep(1000);
         stopRequested = true;
         System.out.println("Zakończono główny wątek");
     }
