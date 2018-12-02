@@ -1,4 +1,4 @@
-package core.multithreading;
+package core.multithreading.examples;
 
 public class StopThread5 {
     public static void main(String[] args) throws InterruptedException {

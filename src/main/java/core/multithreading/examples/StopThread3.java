@@ -1,4 +1,4 @@
-package core.multithreading;
+package core.multithreading.examples;
 
 public class StopThread3 {
     //poprzez użycie volatile zabezpieczamy się przed złym odczytem wartości zmiennej przez wątki

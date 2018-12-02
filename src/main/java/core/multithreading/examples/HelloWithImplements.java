@@ -1,4 +1,4 @@
-package core.multithreading;
+package core.multithreading.examples;
 
 public class HelloWithImplements implements Runnable {
     public static void main(String[] args) throws InterruptedException {
