@@ -1,6 +1,5 @@
-package core.runnableTraining;
+package core.multithreading.runnableTraining;
 
-import core.multithreading.runnableTraining.HanselAndGretel;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
