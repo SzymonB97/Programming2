@@ -9,37 +9,41 @@ import java.io.InputStream;
 
 public class BalanceCalculator {
     private static final String FILE_PATH = "D:\\Projekty Java\\Programming2\\src\\main\\java\\core\\kowalskiBudget\\budzet_kowalskich.xls";
+    private static final int PROFIT_CELL = 1;
+    private static final int OUTGOES_CELL = 3;
 
     public static void main(String[] args) throws IOException, InvalidFormatException {
-        System.out.println("Budżet Kowalskich wynosi: " + readExcel(FILE_PATH) + " zł");
+        System.out.println("Budżet Kowalskich wynosi: " + calculate(readExcel(FILE_PATH)) + " zł");
     }
 
     //row - wiersz
     //cell - kolumna
-    private static double readExcel(String filePath) throws IOException, InvalidFormatException {
+    private static Sheet readExcel(String filePath) throws IOException, InvalidFormatException {
         try (InputStream stream = new FileInputStream(filePath)) {
             Workbook workbook = WorkbookFactory.create(stream);
-            Sheet sheet = workbook.getSheetAt(0);
+            return workbook.getSheetAt(0);
+        }
+    }
 
-            double profit = 0;
-            double outgoes = 0;
-            for (int i = 1; i < sheet.getLastRowNum(); i++) {
-                Row row = sheet.getRow(i);
-                Cell cell1 = row.getCell(1);
-                Cell cell3 = row.getCell(3);
+    private static double calculate(Sheet sheet) {
+        double profit = 0;
+        double outgoes = 0;
+        for (int i = 1; i < sheet.getLastRowNum(); i++) {
+            Row row = sheet.getRow(i);
+            Cell cell1 = row.getCell(PROFIT_CELL);
+            Cell cell3 = row.getCell(OUTGOES_CELL);
 
-                if (cell1.getNumericCellValue() != 0) {
-                    System.out.println("Dochód: " + cell1.getNumericCellValue());
-                    profit += cell1.getNumericCellValue();
-                }
-
-                if (cell3.getNumericCellValue() != 0) {
-                    System.out.println("Wydatek: " + cell3.getNumericCellValue());
-                    outgoes += cell3.getNumericCellValue();
-                }
+            if (cell1.getNumericCellValue() != 0) {
+                System.out.println("Dochód: " + cell1.getNumericCellValue());
+                profit += cell1.getNumericCellValue();
             }
 
-            return profit - outgoes;
+            if (cell3.getNumericCellValue() != 0) {
+                System.out.println("Wydatek: " + cell3.getNumericCellValue());
+                outgoes += cell3.getNumericCellValue();
+            }
         }
+
+        return profit - outgoes;
     }
 }
