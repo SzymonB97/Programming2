@@ -28,8 +28,8 @@ public class CallableExecutor implements Callable<String> {
         Thread.sleep(1000);
 
         List<Future<String>> threadResults = executor.invokeAll(list);
-        for (Future<String> threadResult : threadResults) {
-            System.out.println(threadResult.get());
+        for (Future<String> results : threadResults) {
+            System.out.println(results.get());
         }
         executor.shutdown();
     }
