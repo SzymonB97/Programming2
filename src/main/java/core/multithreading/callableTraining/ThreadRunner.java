@@ -1,4 +1,4 @@
-package core.multithreading;
+package core.multithreading.callableTraining;
 
 import java.util.ArrayList;
 import java.util.List;
