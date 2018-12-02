@@ -7,10 +7,7 @@ public class RunnableLambda {
         Runnable runnable = () -> {
             System.out.println("Second thread");
         };
-        runnable.run();
-
-        //second way to start
-        /*Thread thread = new Thread(runnable);
-        thread.start();*/
+        Thread thread = new Thread(runnable);
+        thread.start();
     }
 }
