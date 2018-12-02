@@ -1,6 +1,6 @@
 package core;
 
-import core.multithreading.examples.HanselAndGretel;
+import core.multithreading.runnableTraining.HanselAndGretel;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 

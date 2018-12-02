@@ -1,7 +1,8 @@
-package core.multithreading.examples;
+package core.multithreading.runnableTraining;
 
-public class StopThread2 {
-    private static boolean stopRequested = false;
+public class StopThread3 {
+    //poprzez użycie volatile zabezpieczamy się przed złym odczytem wartości zmiennej przez wątki
+    private static volatile boolean stopRequested = false;
 
     public static void main(String[] args) throws InterruptedException {
         Thread t = new Thread(new Runnable() {
@@ -11,6 +12,7 @@ public class StopThread2 {
                 int i = 0;
                 while (!stopRequested) {
                     i++;
+                    System.out.println(i);
                 }
                 System.out.println("Zakończono drugi wątek");
             }

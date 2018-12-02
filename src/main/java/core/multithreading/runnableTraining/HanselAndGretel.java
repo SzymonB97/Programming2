@@ -1,4 +1,4 @@
-package core.multithreading.examples;
+package core.multithreading.runnableTraining;
 
 public class HanselAndGretel {
     private static void doAction(int time) {

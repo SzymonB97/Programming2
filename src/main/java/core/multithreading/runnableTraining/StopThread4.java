@@ -1,4 +1,4 @@
-package core.multithreading.examples;
+package core.multithreading.runnableTraining;
 
 public class StopThread4 {
     private static boolean stopRequested = false;

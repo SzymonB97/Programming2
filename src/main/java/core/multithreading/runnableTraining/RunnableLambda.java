@@ -1,4 +1,4 @@
-package core.multithreading.examples;
+package core.multithreading.runnableTraining;
 
 public class RunnableLambda {
     public static void main(String[] args) {
