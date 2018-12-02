@@ -1,4 +1,4 @@
-package core;
+package core.runnableTraining;
 
 import core.multithreading.runnableTraining.HanselAndGretel;
 import org.junit.jupiter.api.Test;
