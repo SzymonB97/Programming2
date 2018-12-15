@@ -3,7 +3,7 @@ package core.swing.swingFileChooser;
 import javax.swing.*;
 import java.io.File;
 
-public class swingFileChooser {
+public class SwingFileChooser {
     private JPanel fileChooserPanel;
     private JLabel label;
     private static JMenuBar mainBar;
@@ -11,8 +11,8 @@ public class swingFileChooser {
     private static JFileChooser fileChooser;
 
     public static void main(String[] args) {
-        JFrame frame = new JFrame("swingFileChooser");
-        swingFileChooser mainFC = new swingFileChooser();
+        JFrame frame = new JFrame("SwingFileChooser");
+        SwingFileChooser mainFC = new SwingFileChooser();
         frame.setContentPane(mainFC.fileChooserPanel);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setJMenuBar(creatingMenuBar(mainFC.label));
