@@ -2,7 +2,8 @@ package core.swing.swingListener;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.event.ActionListener;import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 
 public class SwingListener {
     private JPanel panel;
@@ -25,6 +26,14 @@ public class SwingListener {
             @Override
             public void actionPerformed(ActionEvent e) {
                 JOptionPane.showMessageDialog(clickMeButton, "Click me button was click " + click + " times.");
+            }
+        });
+
+        textField1.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyPressed(KeyEvent e) {
+                super.keyPressed(e);
+                System.out.println(e.getKeyChar());
             }
         });
     }
