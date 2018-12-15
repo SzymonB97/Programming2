@@ -9,12 +9,22 @@ public class SwingListener {
     private JTextField textField1;
     private JButton clickMeButton;
     private JLabel myLabel;
+    private JButton counterButton;
+    private int click = 0;
 
     public SwingListener() {
         clickMeButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 myLabel.setText(textField1.getText());
+                click++;
+            }
+        });
+
+        counterButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JOptionPane.showMessageDialog(clickMeButton, "Click me button was click " + click + " times.");
             }
         });
     }
